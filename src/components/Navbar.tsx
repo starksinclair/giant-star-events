@@ -22,7 +22,7 @@ const Navbar = () => {
           
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8">
-            {['Home', 'Services', 'Gallery', 'Contact'].map((item) => (
+            {['Home', 'Services', 'Gallery', 'About'].map((item) => (
               <Link
                 key={item}
                 to={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
@@ -71,7 +71,7 @@ const Navbar = () => {
                 >
                   <X size={24} />
                 </button>
-                {['Home', 'Services', 'Gallery', 'Contact'].map((item) => (
+                {['Home', 'Services', 'Gallery', 'About'].map((item) => (
                   <Link
                     key={item}
                     to={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
