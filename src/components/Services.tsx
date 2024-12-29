@@ -40,20 +40,20 @@ import { services } from '../data/Data';
         </div>
 
         <motion.div 
-          className="text-center mt-12 space-x-4"
+          className="text-center mt-12 flex-col items-center m-auto flex md:flex-row justify-center gap-3"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
           <Link 
             to="/services" 
-            className="inline-block px-8 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"
+            className="  inline-block px-8 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"
           >
             View All Services
           </Link>
           <Link 
             to="/gallery" 
-            className="inline-block px-8 py-3 border-2 border-purple-600 text-purple-600 rounded-lg hover:bg-purple-600 hover:text-white transition-colors"
+            className="  inline-block px-8 py-3 border-2 border-purple-600 text-purple-600 rounded-lg hover:bg-purple-600 hover:text-white transition-colors"
           >
             View Gallery
           </Link>

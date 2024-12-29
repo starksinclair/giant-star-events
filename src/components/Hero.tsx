@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import Background from "../assets/images/Purple.jpeg"
+// import Background from "../assets/images/hero.jpeg"
 
 const Hero = () => (
     <motion.div
@@ -9,7 +9,7 @@ const Hero = () => (
     >
       <div className="absolute inset-0 overflow-hidden">
         <img
-          src={Background}
+          src={"https://images.unsplash.com/photo-1511795409834-ef04bbd61622"}
           alt="Event Planning"
           className="w-full h-full object-center"
         />
