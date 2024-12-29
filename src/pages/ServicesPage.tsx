@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Heart, Palette, Cake, Camera, Star, Shield } from "lucide-react";
+import { Heart, Cake, Crown, Church, Home, Gift } from "lucide-react";
+import ImageWithFallback from '../components/ImageWithFallback';
+import traditionalBeeds from '../assets/images/services/1024px-Traditional_beeds.jpg';
+import Suya from "../assets/images/services/Suya.jpg"
+import Birthday from "../assets/images/services/birthday.jpeg"
+import Memorial from "../assets/images/services/memorial.jpeg"
+import Suprise from "../assets/images/services/Suprise.jpg"
+import Wedding from "../assets/images/services/wedding.jpg"
 
 const serviceItems = [
   {
@@ -8,94 +15,139 @@ const serviceItems = [
     category: "Wedding Planning",
     title: "Wedding Planning Services",
     description: "Comprehensive wedding planning services tailored to your dream day.",
+    image: Wedding,
     features: [
-      "Full wedding planning and coordination",
-      "Vendor selection and management",
-      "Budget planning and tracking",
-      "Timeline creation and management",
-      "On-site wedding day coordination"
+      "Hall and tent rentals",
+      "Canopy, seats and table arrangements",
+      "Stage setup and lighting design",
+      "Decoration and floral arrangements",
+      "Catering services with exquisite dishes",
+      "Cakes and pastries",
+      "Live band performances and DJ",
+      "MC and event anchoring",
+      "Photography and video coverage",
+      "Drone photography",
+      "Makeup artists and styling",
+      "Invitation cards and branding",
+      "Professional ushers and servers",
+      "Security and car park management"
     ],
-    priceRange: "₦500,000 - ₦2,000,000",
     icon: Heart
   },
   {
     id: 2,
-    category: "Makeup",
-    title: "Professional Makeup Services",
-    description: "Professional makeup artists for your special occasions.",
+    category: "Anniversary & Birthday Events",
+    title: "Anniversary & Birthday Events",
+    description: "Memorable celebrations for your special milestones and birthdays.",
+    image: Birthday,
     features: [
-      "Bridal makeup",
-      "Special occasion makeup",
-      "Group makeup services",
-      "Touch-up services",
-      "Premium beauty products"
+      "Venue selection and setup",
+      "Decoration and lighting",
+      "Catering services",
+      "Cakes and pastries",
+      "Suya and barbecue stations",
+      "Cooling van services",
+      "DJ and entertainment",
+      "Photography and videography",
+      "Souvenir distribution",
+      "Event coordination",
+      "Professional servers",
+      "Security services"
     ],
-    priceRange: "₦25,000 - ₦150,000",
-    icon: Palette
-  },
-  {
-    id: 3,
-    category: "Catering",
-    title: "Exquisite Catering Services",
-    description: "Exquisite culinary experiences for all types of events.",
-    features: [
-      "Customized menu planning",
-      "Multiple cuisine options",
-      "Live cooking stations",
-      "Professional service staff",
-      "Dietary accommodation"
-    ],
-    priceRange: "₦15,000 - ₦50,000 per person",
     icon: Cake
   },
   {
-    id: 4,
-    category: "Photography",
-    title: "Event Photography",
-    description: "Capture your precious moments with our professional photographers.",
+    id: 3,
+    category: "Traditional Ceremonies",
+    title: "Traditional Ceremonies",
+    description: "Expert planning for coronations, chieftaincy, and traditional ceremonies.",
+    image: traditionalBeeds,
     features: [
-      "Professional photography coverage",
-      "Same-day photo previews",
-      "Digital and printed albums",
-      "Drone photography",
-      "Video coverage options"
+      "Traditional venue setup",
+      "Cultural decoration themes",
+      "Traditional catering services",
+      "Live band and cultural performances",
+      "Choir and coral groups",
+      "Photography and documentation",
+      "Billboard and banner arrangements",
+      "Traditional costume coordination",
+      "Security and crowd management",
+      "Professional ushers",
+      "Parking management"
     ],
-    priceRange: "₦200,000 - ₦800,000",
-    icon: Camera
+    icon: Crown
+  },
+  {
+    id: 4,
+    category: "Memorial Services",
+    title: "Memorial Services",
+    description: "Dignified arrangements for funerals, memorials, and thanksgiving services.",
+    image: Memorial,
+    features: [
+      "Ambulance arrangements",
+      "Funeral parlor services",
+      "Professional pallbearers/undertakers",
+      "Parade band and trumpeters",
+      "Memorial decoration",
+      "Catering services",
+      "Photography and documentation",
+      "Posters and banners",
+      "Security arrangements",
+      "Choir arrangements",
+      "Event coordination",
+      "Memorial booklets"
+    ],
+    icon: Church
   },
   {
     id: 5,
-    category: "Decoration",
-    title: "Creative Decoration Services",
-    description: "Transform spaces with our creative decoration services.",
+    category: "Home Celebrations",
+    title: "Home Celebrations",
+    description: "Beautiful house warming parties and home-based events.",
+    image: Suya,
     features: [
-      "Custom theme design",
-      "Floral arrangements",
-      "Lighting setup",
-      "Furniture rental",
-      "Stage and backdrop design"
+      "Indoor/outdoor setup",
+      "Tent and canopy arrangements",
+      "Furniture rentals",
+      "Decoration services",
+      "Catering and refreshments",
+      "Entertainment setup",
+      "Photography services",
+      "Lighting arrangements",
+      "Professional servers",
+      "Cleanup services"
     ],
-    priceRange: "₦300,000 - ₦1,500,000",
-    icon: Star
+    icon: Home
   },
   {
     id: 6,
-    category: "Security",
-    title: "Event Security Services",
-    description: "Professional security personnel to ensure your event's safety and peace of mind.",
+    category: "Surprise Events",
+    title: "Surprise Events",
+    description: "Carefully planned surprise parties and special celebrations.",
+    image: Suprise,
     features: [
-      "Trained security personnel",
-      "Crowd management",
-      "VIP protection",
-      "Access control",
-      "Emergency response"
+      "Secret venue preparation",
+      "Decoration and setup",
+      "Catering arrangements",
+      "Entertainment coordination",
+      "Photography and video coverage",
+      "Guest coordination",
+      "Gift arrangements",
+      "Timeline management",
+      "Professional coordination"
     ],
-    priceRange: "₦150,000 - ₦500,000",
-    icon: Shield
+    icon: Gift
   }
 ];
 
-const categories = ["Wedding Planning", "Makeup", "Catering", "Photography", "Decoration", "Security"];
+const categories = [
+  "Wedding Planning",
+  "Traditional Ceremonies",
+  "Anniversary & Birthday Events",
+  "Memorial Services",
+  "Home Celebrations",
+  "Surprise Events"
+];
 
 const ServicesPage: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState(categories[0]);
@@ -130,31 +182,37 @@ const ServicesPage: React.FC = () => {
           exit={{ opacity: 0, y: -20 }}
           className="max-w-4xl mx-auto"
         >
-          <div className="bg-white rounded-xl shadow-lg overflow-hidden p-8">
-            <div className="flex items-center gap-4 mb-6">
-              <selectedService.icon className="w-8 h-8 text-purple-600" />
-              <h2 className="text-3xl font-bold">{selectedService.title}</h2>
-            </div>
-            
-            <p className="text-xl text-gray-600 mb-8">{selectedService.description}</p>
-            
-            <div className="bg-purple-50 rounded-lg p-6 mb-8">
-              <h3 className="text-xl font-semibold mb-4">What's Included:</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {selectedService.features.map((feature, index) => (
-                  <div key={index} className="flex items-center">
-                    <svg className="w-5 h-5 text-purple-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="text-gray-700">{feature}</span>
-                  </div>
-                ))}
+          <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+            <div className="relative h-[300px] w-full">
+              <ImageWithFallback
+                src={selectedService.image}
+                alt={selectedService.title}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              <div className="absolute bottom-0 left-0 p-8 text-white">
+                <div className="flex items-center gap-4 mb-2">
+                  <selectedService.icon className="w-8 h-8" />
+                  <h2 className="text-3xl font-bold">{selectedService.title}</h2>
+                </div>
+                <p className="text-xl text-gray-100">{selectedService.description}</p>
               </div>
             </div>
-            
-            <div className="text-center">
-              <p className="text-gray-600 mb-2">Investment Starting From</p>
-              <p className="text-3xl font-bold text-purple-600">{selectedService.priceRange}</p>
+
+            <div className="p-8">
+              <div className="bg-purple-50 rounded-lg p-6">
+                <h3 className="text-xl font-semibold mb-4">What's Included:</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {selectedService.features.map((feature, index) => (
+                    <div key={index} className="flex items-center">
+                      <svg className="w-5 h-5 text-purple-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-gray-700">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </motion.div>

@@ -1,64 +1,6 @@
 import { motion } from 'framer-motion';
-import {  Star, Heart, Users, Cake, Camera, Palette, Church, Crown, Gift, Home,  } from 'lucide-react';
-
-const services = [
-    {
-      title: "Wedding Planning",
-      icon: Heart,
-      description: "Comprehensive wedding planning services tailored to your dream day."
-    },
-    {
-        title: "Anniversary & Birthday Events",
-        icon: Cake,
-        description: "Memorable celebrations for your special milestones and birthdays."
-      },
-      {
-        title: "Traditional Ceremonies",
-        icon: Crown,
-        description: "Expert planning for coronations, chieftaincy, and traditional ceremonies."
-      },
-      {
-        title: "Memorial Services",
-        icon: Church,
-        description: "Dignified arrangements for funerals, memorials, and thanksgiving services."
-      },
-      {
-        title: "Home Celebrations",
-        icon: Home,
-        description: "Beautiful house warming parties and home-based events."
-      },
-      {
-        title: "Surprise Events",
-        icon: Gift,
-        description: "Carefully planned surprise parties and special celebrations."
-      },
-    {
-      title: "Makeup Artists",
-      icon: Palette,
-      description: "Professional makeup artists for your special occasions."
-    },
-    {
-      title: "Catering",
-      icon: Cake,
-      description: "Exquisite culinary experiences for all types of events."
-    },
-    {
-        title: "Photography & Documentation",
-        icon: Camera,
-        description: "Capture your precious moments with our professional photographers."
-      },
-    {
-      title: "Decoration",
-      icon: Star,
-      description: "Transform spaces with our creative decoration services."
-    },
-    {
-      title: "Security",
-      icon: Users,
-      description: "Expert event security/bouncers to ensure everything runs smoothly."
-    }
-  ];
-  
+import { Link } from 'react-router-dom';
+import { services } from '../data/Data';
   const Services = () => (
     <section id="services" className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">
@@ -96,6 +38,26 @@ const services = [
             </motion.div>
           ))}
         </div>
+
+        <motion.div 
+          className="text-center mt-12 space-x-4"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <Link 
+            to="/services" 
+            className="inline-block px-8 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"
+          >
+            View All Services
+          </Link>
+          <Link 
+            to="/gallery" 
+            className="inline-block px-8 py-3 border-2 border-purple-600 text-purple-600 rounded-lg hover:bg-purple-600 hover:text-white transition-colors"
+          >
+            View Gallery
+          </Link>
+        </motion.div>
       </div>
     </section>
   );
