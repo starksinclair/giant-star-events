@@ -5,7 +5,7 @@ const Hero = () => (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="relative fixeh-screen flex items-center justify-center text-white"
+      className="relative h-screen flex items-center justify-center text-white"
     >
       <div className="absolute inset-0 overflow-hidden">
         <img
