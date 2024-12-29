@@ -4,7 +4,7 @@ const Footer = () => (
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h4 className="text-xl font-semibold mb-4">Giant Star Events</h4>
+            <h4 className="text-xl font-semibold mb-4">Mature Events</h4>
             <p className="text-gray-400">Creating memorable moments, one event at a time.</p>
           </div>
           <div>
@@ -27,7 +27,7 @@ const Footer = () => (
           </div>
         </div>
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} Giant Star Events. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Mature Events. All rights reserved.</p>
         </div>
       </div>
     </footer>

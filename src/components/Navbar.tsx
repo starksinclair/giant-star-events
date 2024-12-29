@@ -17,7 +17,7 @@ const Navbar = () => {
             animate={{ opacity: 1, x: 0 }}
             className="text-2xl font-bold text-purple-600"
           >
-            <Link to="/">Giant Star Events</Link>
+            <Link to="/">Mature Events</Link>
           </motion.div>
           
           {/* Desktop Menu */}

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Phone, Mail } from 'lucide-react';
+import { Phone, Mail, MapPin, Map } from 'lucide-react';
 
 const Contact = () => (
     <section id="contact" className="py-20 bg-white">
@@ -22,14 +22,32 @@ const Contact = () => (
             <h3 className="text-2xl font-semibold text-gray-800">Contact Information</h3>
             <div className="flex items-center space-x-4">
               <Phone className="w-6 h-6 text-purple-600" />
-              <span className="text-gray-600">+234-829-567-3890</span>
+              <a 
+                href="tel:+2349164902923" 
+                className="text-purple-600 hover:text-purple-800 underline decoration-dotted transition-colors"
+              >
+                +234 916 490 2923
+              </a>
             </div>
             <div className="flex items-center space-x-4">
               <Mail className="w-6 h-6 text-purple-600" />
-              <span className="text-gray-600">contact@greatgiantevents.com</span>
+              <a 
+                href="mailto:contact@greatgiantevents.com"
+                className="text-purple-600 hover:text-purple-800 underline decoration-dotted transition-colors"
+              >
+                contact@greatgiantevents.com
+              </a>
+            </div>
+            <div className="flex items-center space-x-4">
+              <MapPin className="w-6 h-6 text-purple-600" />
+              <span className="text-gray-600">67 Okigwe Road, Opposite Coisco Fuel Station, Owerri</span>
+            </div>
+            <div className="flex items-center space-x-4">
+              <Map className="w-6 h-6 text-purple-600" />
+              <span className="text-gray-600">We cover events in Southeastern states, Port Harcourt, Asaba and surrounding areas</span>
             </div>
             <a
-              href="https://wa.me/your-number"
+              href="https://wa.me/2349164902923"
               className="inline-flex items-center space-x-2 bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600 transition-colors"
             >
               <span>Discuss on WhatsApp</span>

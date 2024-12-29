@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import {  Star, Heart, Users, Cake, Camera, Palette,  } from 'lucide-react';
+import {  Star, Heart, Users, Cake, Camera, Palette, Church, Crown, Gift, Home,  } from 'lucide-react';
 
 const services = [
     {
@@ -7,6 +7,31 @@ const services = [
       icon: Heart,
       description: "Comprehensive wedding planning services tailored to your dream day."
     },
+    {
+        title: "Anniversary & Birthday Events",
+        icon: Cake,
+        description: "Memorable celebrations for your special milestones and birthdays."
+      },
+      {
+        title: "Traditional Ceremonies",
+        icon: Crown,
+        description: "Expert planning for coronations, chieftaincy, and traditional ceremonies."
+      },
+      {
+        title: "Memorial Services",
+        icon: Church,
+        description: "Dignified arrangements for funerals, memorials, and thanksgiving services."
+      },
+      {
+        title: "Home Celebrations",
+        icon: Home,
+        description: "Beautiful house warming parties and home-based events."
+      },
+      {
+        title: "Surprise Events",
+        icon: Gift,
+        description: "Carefully planned surprise parties and special celebrations."
+      },
     {
       title: "Makeup Artists",
       icon: Palette,
@@ -18,10 +43,10 @@ const services = [
       description: "Exquisite culinary experiences for all types of events."
     },
     {
-      title: "Event Photography",
-      icon: Camera,
-      description: "Capture your precious moments with our professional photographers."
-    },
+        title: "Photography & Documentation",
+        icon: Camera,
+        description: "Capture your precious moments with our professional photographers."
+      },
     {
       title: "Decoration",
       icon: Star,
@@ -41,10 +66,20 @@ const services = [
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl font-bold text-center mb-16 text-gray-800"
+          className="text-4xl font-bold text-center mb-4 text-gray-800"
         >
           Our Services
         </motion.h2>
+        
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center text-gray-600 mb-16"
+        >
+          We help you plan, execute and memorize your events. We plan all kinds of events including:
+        </motion.p>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <motion.div
