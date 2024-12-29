@@ -1,5 +1,5 @@
 import { Mail, Phone, MapPin, Clock, Instagram, Facebook } from 'lucide-react';
-
+import { services } from '../data/Data';
 const AboutPage = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 py-12 ">
@@ -28,30 +28,12 @@ const AboutPage = () => {
           We offer a comprehensive range of event services including:
         </p>
         <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-700">
-          <li className="flex items-center gap-2">
+          {services.map((service) => (
+            <li className="flex items-center gap-2" key={service.title}>
             <span className="w-2 h-2 bg-purple-600 rounded-full"></span>
-            Wedding Planning & Coordination
+           {service.title}
           </li>
-          <li className="flex items-center gap-2">
-            <span className="w-2 h-2 bg-purple-600 rounded-full"></span>
-            Professional Makeup Services
-          </li>
-          <li className="flex items-center gap-2">
-            <span className="w-2 h-2 bg-purple-600 rounded-full"></span>
-            Exquisite Catering
-          </li>
-          <li className="flex items-center gap-2">
-            <span className="w-2 h-2 bg-purple-600 rounded-full"></span>
-            Event Photography
-          </li>
-          <li className="flex items-center gap-2">
-            <span className="w-2 h-2 bg-purple-600 rounded-full"></span>
-            Creative Decoration
-          </li>
-          <li className="flex items-center gap-2">
-            <span className="w-2 h-2 bg-purple-600 rounded-full"></span>
-            Event Security
-          </li>
+          ))}
         </ul>
       </div>
 
@@ -62,15 +44,15 @@ const AboutPage = () => {
           <div className="space-y-4">
             <div className="flex items-center gap-3">
               <MapPin className="text-purple-600" />
-              <p className="text-gray-700">123 Example Street, Owerri, Imo State, Nigeria</p>
+              <p className="text-gray-700">No 4 Tetlow Road, Owerri, Imo State, Nigeria</p>
             </div>
             <div className="flex items-center gap-3">
               <Phone className="text-purple-600" />
-              <p className="text-gray-700">+234 123 456 7890</p>
+              <p className="text-gray-700">+234 803 307 3197</p>
             </div>
             <div className="flex items-center gap-3">
               <Mail className="text-purple-600" />
-              <p className="text-gray-700">info@giantstarevents.com</p>
+              <p className="text-gray-700">giantstarevents@gmail.com</p>
             </div>
             <div className="flex items-center gap-3">
               <Clock className="text-purple-600" />

@@ -30,10 +30,10 @@ const Hero = () => (
           transition={{ delay: 0.4 }}
           className="text-xl md:text-2xl mb-8"
         >
-          Your one-stop solution for weddings, makeup, catering, and decorations.
+          Your Nigerian one-stop solution for weddings, makeup, catering, and decorations.
         </motion.p>
         <motion.a
-          href="https://wa.me/your-number"
+          href="https://wa.me/2349164902923"
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           whileHover={{ scale: 1.05 }}
