@@ -5,13 +5,13 @@ const Hero = () => (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="relative h-screen flex items-center justify-center text-white"
+      className="relative h-[50vh] md:h-screen flex items-center justify-center text-white"
     >
       <div className="absolute inset-0 overflow-hidden">
         <img
           src={"https://images.unsplash.com/photo-1511795409834-ef04bbd61622"}
           alt="Event Planning"
-          className="w-full h-full object-center"
+          className="w-full h-full object-center object-cover"
         />
         <div className="absolute inset-0 bg-black/50" />
       </div>
