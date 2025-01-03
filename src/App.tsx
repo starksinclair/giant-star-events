@@ -7,6 +7,7 @@ import AboutPage from './pages/AboutPage';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import { useEffect } from 'react';
+import { Analytics } from "@vercel/analytics/react"
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -25,6 +26,7 @@ const App = () => {
     <BrowserRouter>
       <ScrollToTop />
       <Navbar />
+        <Analytics />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/services" element={<ServicePage />} />

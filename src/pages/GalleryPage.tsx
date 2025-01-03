@@ -1,11 +1,15 @@
 import { OtherImages } from "../data/Data";
+interface ImageModule {
+  default: string;
+}
 
 const imageFiles = import.meta.glob('/src/assets/images/gallery/*.jpg', { eager: true });
 const localImages = Object.keys(imageFiles).map((path, i) => {
+  const resolvedPath = (imageFiles[path] as ImageModule).default;
   return {
-    src: path,
+    src: resolvedPath, 
     alt: `Gallery Image ${i + 1}`,
-    caption: `Gallery Photo ${i + 1}`
+    caption: `Gallery Photo ${i + 1}`,
   };
 });
 
@@ -34,7 +38,6 @@ const GalleryPage = () => {
             <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4 transform transition-transform duration-300 translate-y-full group-hover:translate-y-0">
               <p className="text-sm font-medium">{image?.caption}</p>
             </div>
-           
           </div>
         ))}
       </div>
