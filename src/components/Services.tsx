@@ -10,7 +10,7 @@ import { services } from '../data/Data';
           viewport={{ once: true }}
           className="text-4xl font-bold text-center mb-4 text-gray-800"
         >
-          Our Services
+          Our Events
         </motion.h2>
         
         <motion.p
@@ -24,8 +24,8 @@ import { services } from '../data/Data';
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
+           <Link to={`/services/${service.title.replace(/\s+/g, '-').toLowerCase()}`} key={service.title}>
             <motion.div
-              key={service.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -36,6 +36,7 @@ import { services } from '../data/Data';
               <h3 className="text-xl font-semibold mb-4 text-gray-800">{service.title}</h3>
               <p className="text-gray-600">{service.description}</p>
             </motion.div>
+           </Link>
           ))}
         </div>
 

@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Clock, Instagram, Facebook } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock } from 'lucide-react';
 import { services } from '../data/Data';
 const AboutPage = () => {
   return (
@@ -89,7 +89,7 @@ const AboutPage = () => {
       </div>
 
       {/* Social Media */}
-      <div className="text-center">
+      {/* <div className="text-center">
         <h2 className="text-2xl font-semibold mb-4 text-purple-600">Connect With Us</h2>
         <div className="flex justify-center gap-6">
           <a href="#" className="text-purple-600 hover:text-purple-700 transition-colors">
@@ -99,7 +99,7 @@ const AboutPage = () => {
             <Facebook size={24} />
           </a>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

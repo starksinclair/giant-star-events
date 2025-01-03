@@ -8,6 +8,8 @@ import Birthday from "../assets/images/services/birthday.jpeg"
 import Memorial from "../assets/images/services/memorial.jpeg"
 import Suprise from "../assets/images/services/Suprise.jpg"
 import Wedding from "../assets/images/services/wedding.jpg"
+import { services } from "../data/Data";
+import { Link, useParams } from "react-router-dom";
 
 const serviceItems = [
   {
@@ -79,8 +81,8 @@ const serviceItems = [
   },
   {
     id: 4,
-    category: "Memorial Services",
-    title: "Memorial Services",
+    category: "Funeral Services",
+    title: "Funeral Services",
     description: "Dignified arrangements for funerals, memorials, and thanksgiving services.",
     image: Memorial,
     features: [
@@ -140,85 +142,85 @@ const serviceItems = [
   }
 ];
 
-const categories = [
-  "Wedding Planning",
-  "Traditional Ceremonies",
-  "Anniversary & Birthday Events",
-  "Memorial Services",
-  "Home Celebrations",
-  "Surprise Events"
-];
 
 const ServicesPage: React.FC = () => {
-  const [activeCategory, setActiveCategory] = useState(categories[0]);
-  const selectedService = serviceItems.find((item) => item.category === activeCategory);
+    const { serviceId } = useParams<string>();
+    console.log(serviceId);
+    
+    const [activeCategory, setActiveCategory] = useState(
+        serviceId ? serviceId.replace(/\s+/g, '-').toLowerCase() : "wedding-planning"
+    );
 
-  return (
-    <div className="max-w-7xl mx-auto px-4 py-12">
-      <h1 className="text-4xl font-bold text-center mb-12 mt-[8rem]">Our Services</h1>
-      
-      <div className="flex flex-wrap justify-center gap-4 mb-12">
-        {categories.map((category) => (
-          <button
-            key={category}
-            className={`px-6 py-2 rounded-full transition-all ${
-              activeCategory === category
-                ? "bg-purple-600 text-white"
-                : "bg-gray-100 hover:bg-gray-200"
-            }`}
-            onClick={() => setActiveCategory(category)}
-          >
-            {category}
-          </button>
-        ))}
-      </div>
+    const selectedService = serviceItems.find((item) => item.category.toLowerCase().replace(/\s+/g, '-') === activeCategory);
 
-      {selectedService && (
-        <motion.div 
-          layout
-          key={selectedService.category}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          className="max-w-4xl mx-auto"
-        >
-          <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-            <div className="relative h-[300px] w-full">
-              <ImageWithFallback
-                src={selectedService.image}
-                alt={selectedService.title}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-              <div className="absolute bottom-0 left-0 p-8 text-white">
-                <div className="flex items-center gap-4 mb-2">
-                  <selectedService.icon className="w-8 h-8" />
-                  <h2 className="text-3xl font-bold">{selectedService.title}</h2>
-                </div>
-                <p className="text-xl text-gray-100">{selectedService.description}</p>
-              </div>
-            </div>
-
-            <div className="p-8">
-              <div className="bg-purple-50 rounded-lg p-6">
-                <h3 className="text-xl font-semibold mb-4">What's Included:</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {selectedService.features.map((feature, index) => (
-                    <div key={index} className="flex items-center">
-                      <svg className="w-5 h-5 text-purple-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-gray-700">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
+    return (
+        <div className="max-w-7xl mx-auto px-4 py-12">
+          <h1 className="text-4xl font-bold text-center mb-12 mt-[8rem]">Our Services</h1>
+          
+          <div className="flex flex-wrap justify-center gap-4 mb-12">
+            {services.map((category) => (
+              <button
+                key={category.title}
+                className={`px-6 py-2 rounded-full transition-all ${
+                  activeCategory === category.title.replace(/\s+/g, '-').toLowerCase()
+                    ? "bg-purple-600 text-white"
+                    : "bg-gray-100 hover:bg-gray-200"
+                }`}
+                onClick={() => setActiveCategory(category.title.replace(/\s+/g, '-').toLowerCase())}
+              >
+                {category.title}
+              </button>
+            ))}
           </div>
-        </motion.div>
-      )}
-    </div>
-  );
+
+          {selectedService && (
+            <motion.div 
+              layout
+              key={selectedService.category}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="max-w-4xl mx-auto"
+            >
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+               <Link to="/gallery">
+               <div className="relative h-[300px] w-full">
+                  <ImageWithFallback
+                    src={selectedService.image}
+                    alt={selectedService.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-0 left-0 p-8 text-white">
+                    <div className="flex items-center gap-4 mb-2">
+                      <selectedService.icon className="w-8 h-8" />
+                      <h2 className="text-3xl font-bold">{selectedService.title}</h2>
+                    </div>
+                    <p className="text-xl text-gray-100">{selectedService.description}</p>
+                  </div>
+                </div>
+               </Link>
+
+                <div className="p-8">
+                  <div className="bg-purple-50 rounded-lg p-6">
+                    <h3 className="text-xl font-semibold mb-4">What's Included:</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {selectedService.features.map((feature, index) => (
+                        <div key={index} className="flex items-center">
+                          <svg className="w-5 h-5 text-purple-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span className="text-gray-700">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </div>
+    );
 };
 
 export default ServicesPage;

@@ -15,7 +15,7 @@ const Navbar = () => {
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="text-2xl font-bold text-purple-600"
+            className="text-2xl font-bold text-purple-600 uppercase"
           >
             <Link to="/">Mature Events</Link>
           </motion.div>
