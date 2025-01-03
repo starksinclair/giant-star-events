@@ -14,11 +14,12 @@ const Misssion = () => {
           <h2 className="text-4xl font-bold mb-6 text-gray-800 text-center">Our Mission</h2>
           <div className="text-gray-600 mb-16 space-y-4">
             <p>
-              Events and ceremonies don't happen always, some events like weddings, funerals, coronations are experienced once in a lifetime which makes it impossible to redeem any errors or bad image created by poor planning and implementations at such events.
-            </p>
+            Events and ceremonies don't happen always, some events like weddings, funerals, coronations are experienced once in a life time which makes it impossible to redeem any errors or bad image created by poor planning and implementations at such events.
+              </p>
             <p>
-              We want to help people make good impressions in their events from the beginning to the last minute of the show. We put smiles on the faces of both our clients and their guests.
-            </p>
+            At <span className='text-purple-600 font-bold'>Mature Event planners company Ltd</span>, 
+            We help people make good impressions in their events from the beginning to the last minute of the show. We put smiles on the faces of both our clients and their guests.
+              </p>
           </div>
 
           {/* Our Approach */}

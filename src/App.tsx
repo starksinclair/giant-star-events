@@ -21,12 +21,14 @@ const ScrollToTop = () => {
 const App = () => {
   return (
     <>
+
     <BrowserRouter>
       <ScrollToTop />
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/services" element={<ServicePage />} />
+        <Route path="/services/:serviceId" element={<ServicePage />} />
         <Route path="/gallery" element={<GalleryPage />} />
         <Route path="/about" element={<AboutPage />} />
         {/* <Route path="/contact" element={<ContactPage />} /> */}
