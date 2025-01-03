@@ -1,6 +1,6 @@
 import { OtherImages } from "../data/Data";
 
-const imageFiles = import.meta.glob('/dist/assets/images/gallery/*.jpg', { eager: true });
+const imageFiles = import.meta.glob('/src/assets/images/gallery/*.jpg', { eager: true });
 const localImages = Object.keys(imageFiles).map((path, i) => {
   return {
     src: path,
