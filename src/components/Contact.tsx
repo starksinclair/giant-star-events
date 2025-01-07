@@ -35,7 +35,7 @@ const Contact = () => (
                 href="mailto:contact@greatgiantevents.com"
                 className="text-purple-600 hover:text-purple-800 underline decoration-dotted transition-colors"
               >
-                contact@greatgiantevents.com
+               contact@matureeventplanners.com
               </a>
             </div>
             <div className="flex items-center space-x-4">
